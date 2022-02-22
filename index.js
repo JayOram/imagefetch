@@ -41,11 +41,13 @@ stream.on('end', function() {
 ctx.fillStyle = bg;
 ctx.fillRect(0, 0, w, h);
 
+var ip = req.ip.substring(7);
+
 ctx.font = "bold 30px arial, sans-serif";
 ctx.fillStyle = fg;
 ctx.textAlign = "center";
 ctx.textBaseline = "middle";
-ctx.fillText(req.ip, w/2, h/2);
+ctx.fillText(`${ip}`, w/2, h/2);
 
 return 1;
 });
