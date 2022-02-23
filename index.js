@@ -41,8 +41,10 @@ stream.on('end', function() {
 ctx.fillStyle = bg;
 ctx.fillRect(0, 0, w, h);
 
-var ip = req.ip;
-var ipstring = ip.substring(7);
+// var ip = req.ip;
+// var ipstring = ip.substring(7);
+
+var ipstring = (req.headers['x-forwarded-for'])
 
 
 ctx.font = "bold 30px arial, sans-serif";
